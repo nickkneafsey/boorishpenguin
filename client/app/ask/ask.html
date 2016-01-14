@@ -32,21 +32,27 @@
 <br><br>
 <!-- This segment will be moved to the questions page eventually -->
 <div ng-model="question.embedData">
-  <div class="row-fluid">
-    <div class="col-md-12">
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+        
       <div class="thumbnail">
         <!-- <img class="col-md-8" src="{{question.embedData.thumbnail_url}}"> -->
-        <img class="col-md-8" src="{{question.embedData.thumbnail_url}}">
+        <img src="{{question.embedData.thumbnail_url}}">
         <div class="caption">
           <!-- <h3 class="inline">{{question.embedData.title}}</h3> -->
-          <h3>{{question.embedData.title}}</h3>
+          <h3>{{question.embedData.provider_name}}</h3>
           <p>{{question.embedData.provider_url}}</p>
           <p><a href="{{question.embedData.provider_url}}" class="btn btn-primary" role="button">Visit</a> <a href="#" class="btn btn-default" role="button">Reviews</a></p>
+          <button type="button" class="btn btn-success">+</button>
+        <button type="button" class="btn btn-danger">-</button>
+        <br>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <!--<div class="dropdown">-->
   <!--<a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">-->
