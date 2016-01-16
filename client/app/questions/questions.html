@@ -44,18 +44,15 @@
       <hr>
       <div ng-repeat='trend in trending | filter:searchText' class="trend">
       <div class="col-lg-12">
-          <div class="col-sm-8">
               <h3>
                   <a ng-href='#/products/{{ trend.id }}'>{{ trend.title }}</a>
               </h3>
               <p ng-if="isTrend">{{trend.like_count}} likes</p>
               <p ng-if="!isTrend">{{trend.response_count}} responses</p>
-          </div>
-          <hr>
           <br>
+
       </div>
       </div>
-      <br>
   </div>
 </div>
 
