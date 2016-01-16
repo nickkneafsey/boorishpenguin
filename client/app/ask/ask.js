@@ -62,7 +62,7 @@ angular.module('boorish.ask', [])
       
       Questions.embedLink($scope.question.link).then(function(data) {
         embedly = data.data;
-        console.log(embedly);
+        
         $scope.question.provider_url = embedly.provider_url || null;
         $scope.question.thumbnail_width = embedly.thumbnail_width || null;
         $scope.question.thumbnail_height = embedly.thumbnail_height || null;
