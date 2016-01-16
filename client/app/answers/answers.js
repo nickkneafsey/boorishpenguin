@@ -27,6 +27,14 @@ angular.module('boorish.answers', [])
   /////   
   /////   removeAnswer. An answer can only be deleted by a teacher or the user who posted the answer. This removes the answer.
   ///////////////////////////////////////////////////////////////////////////////////////////////
+  $scope.giveLike = function(postid) {
+    var obj = {};
+    obj.id_user = localStorage.getItem('com.boorish');
+    obj.id_post = postid;
+    Questions.addLike(obj).then(function(){
+      $scope.getQuestion();
+    });
+  };
 
   $scope.getQuestion = function() {
     var path = $location.path(); // e.g., '/questions/19'

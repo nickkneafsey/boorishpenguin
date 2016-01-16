@@ -2,11 +2,35 @@
   <div ng-model='data.question' class="question-page-item">
     <div class="answer-content">
       <div class="question-header">
-        <h3 class="">
+        <!-- <h3 class="">
           {{ data.question.title }}
+
           <span class="glyphicon glyphicon-ok-sign" ng-if="data.question.isGood == true"></span>
-        </h3>
-        <div class="dropdown" style="margin-left: auto">
+        </h3> -->
+        <!-- nick test -->
+        <div  class="row">
+          <div class="col-md-4 prod">
+            <div class="thumbnail">
+              <img src="{{data.question.thumbnail_url}}">
+              <div class="caption">
+                <h3><a ng-href='#/products/{{ data.question.id }}'>{{ data.question.title }}</a></h3>
+                <p>{{data.question.provider_name}}</p>
+                <p>{{data.question.provider_url}}</p>
+                <p><a href="{{data.question.url}}" class="btn btn-primary" role="button">Visit</a> <a href='#/products/{{ data.question.id }}' class="btn btn-default" role="button">Review</a></p>
+                <button type="button" class="btn btn-success" ng-click="giveLike(data.question.id)"><</button>
+                <button type="button" class="btn btn-danger" ng-click="giveLike(data.question.id)">></button>
+                <span>{{data.question.like_count}} likes</span>
+                <br>
+                <br>
+                <img ng-src="{{ data.question.imgUrl }}0" width="20" height="20">
+                <span class="usertag">{{ data.question.user }}</span>
+                <p class="usertag">{{ data.question.createdAt | date:"MM/dd/yyyy h:mma"}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- nick test end -->
+        <!-- <div class="dropdown" style="margin-left: auto">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Mark
             <span class="caret"></span>
@@ -15,27 +39,27 @@
             <li><a href="" type='submit' ng-click='updateQuestion("good")'>Approved</a></li>
             <li><a href="" type='submit' ng-click='updateQuestion("answered")'>Answered</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
       <!--<hr>-->
-      <div class="col-xs-3">
+      <!-- <div class="col-xs-3">
         <div>
           <img ng-src="{{ data.question.imgUrl }}0" width="64" height="64">
         </div>
-        <!-- number of points current on question -->
+        
         <a href="" type='submit'  ng-click='updateQuestion("like")'>
           <span class="glyphicon glyphicon-heart"></span>
           <span>{{ data.question.points }}</span>
           <span>Likes</span>
         </a>
-      </div>
-      <div class="col-xs-9">
+      </div> -->
+      <!-- <div class="col-xs-9">
         <div>{{ data.question.text }}</div>
         <div>- {{ data.question.user }}</div>
         <div class="course">{{ data.question.coursename }}</div>
         <div class="tag">{{ data.question.tagname }}</div>
         <input class="btn btn-default pull-right" type='submit' ng-click='removeQuestion(data.question.id)' value='Remove'>
-      </div>
+      </div> -->
     </div>
   </div>
 

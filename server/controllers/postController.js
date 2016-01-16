@@ -186,16 +186,25 @@ module.exports = {
       include: [db.User]
     })
     .then(function(question) {
+      console.log(question);
       var formattedProduct = [{
         id: question.id,
         title: question.title,
         text: question.text,
         isAResponse: false,
         points: question.points,
+        url: question.url,
+        provider_url: question.provider_url,
+        thumbnail_width: question.thumbnail_width,
+        thumbnail_height: question.thumbnail_height,
+        provider_name: question.provider_name,
+        thumbnail_url: question.thumbnail_url,
+        like_count: question.like_count,
+
         //Number of responses
         responses: question.responses,
         createdAt: question.createdAt,
-        user: question.User.name,
+        user: question.User.username,
         userid: question.User.id,
         imgUrl: question.User.picture,
         updatedAt: question.updatedAt

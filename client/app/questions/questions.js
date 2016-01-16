@@ -47,7 +47,6 @@ angular.module('boorish.questions', [])
     Questions.addLike(obj).then(function(){
       $scope.getProds();
     });
-    //$scope.getProds();
   }
 
 
