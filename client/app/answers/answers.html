@@ -8,8 +8,8 @@
           <span class="glyphicon glyphicon-ok-sign" ng-if="data.question.isGood == true"></span>
         </h3> -->
         <!-- nick test -->
-        <div  class="row">
-          <div class="col-md-4 prod">
+        <div  class="row ">
+          <div class="col-md-4 prod bigrev">
             <div class="thumbnail">
               <img src="{{data.question.thumbnail_url}}">
               <div class="caption">
@@ -63,9 +63,9 @@
     </div>
   </div>
 
-   <div ng-model='data.answers'  >
+   <div ng-model='data.answers'>
      <div class="answer-content">
-      <h3>{{data.answers.length}} Answers</h3>
+      <h3>{{data.answers.length}} Reviews</h3>
       <hr>
       <div ng-repeat='answer in data.answers' class="answer-page-item">
         <div class="col-xs-3">
@@ -74,8 +74,8 @@
           </div>
           <div>
             <a href="" type='submit'  ng-click='updateAnswer($index, "like")'>
-              <span class="glyphicon glyphicon-heart"></span>
-              <span>{{ answer.points }}</span>
+              <span class="glyphicon glyphicon-heart" ng-click="giveLike(answer.id)"></span>
+              <span>{{ answer.like_count }}</span>
               <span>Likes</span>
             </a>
           </div>
@@ -100,7 +100,7 @@
   </div>
 
   <div>
-    <h3>Your answer</h3>
+    <h3>Your Review</h3>
     <form>
       <div class="form-group">
         <textarea class="form-control" rows='5' cols='80' ng-model='newAnswer.text' maxlength="255" ng-trim="false"  placeholder='Write your answer'></textarea>
